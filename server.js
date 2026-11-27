@@ -11,7 +11,7 @@ const startServer = async () => {
     const shutdown = () => {
         console.log('Shutting down server...', 'Server');
         server.close(() => {
-            logger.info('Server shutdown complete', 'Server');
+            console.log('Server shutdown complete', 'Server');
             process.exit(0);
         });
     };
@@ -25,5 +25,6 @@ const startServer = async () => {
 };
 
 startServer().catch((err) => {
+    console.log('Failed to start server', 'Server', err);
     process.exit(1);
 });
